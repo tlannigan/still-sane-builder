@@ -60,7 +60,7 @@ const CharacterPane = () => {
           <div className="basis-1/2 bg-darker py-2 px-4">
             <h3 className="text-lg font-light">SUMMARY</h3>
             <p>
-              If you want to kill everything on your screen instatly, this is
+              If you want to kill everything on your screen instantly, this is
               the build for you. Endgame-viable and tanky enough to sustain high
               tier mapping.
             </p>

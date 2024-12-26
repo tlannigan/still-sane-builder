@@ -1,7 +1,7 @@
 'use client'
 
 import { Pane } from '@/constants/enums'
-import { PaneContext } from '@/context/InterfaceControlContext'
+import { PaneContext } from '@/components/logic/context/InterfaceControlContext'
 import { ReactNode, useState } from 'react'
 
 const InterfaceControlProvider = ({ children }: { children: ReactNode }) => {

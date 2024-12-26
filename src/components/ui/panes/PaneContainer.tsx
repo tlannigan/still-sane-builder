@@ -1,7 +1,7 @@
 'use client'
 
 import { Pane } from '@/constants/enums'
-import { PaneContext } from '@/context/InterfaceControlContext'
+import { PaneContext } from '@/components/logic/context/InterfaceControlContext'
 import { useContext } from 'react'
 import CharacterPane from './CharacterPane'
 import SkillsPane from './SkillsPane'

@@ -1,5 +1,5 @@
 import { Pane } from '@/constants/enums'
-import { PaneContext } from '@/context/InterfaceControlContext'
+import { PaneContext } from '@/components/logic/context/InterfaceControlContext'
 import { ComponentPropsWithoutRef, useContext } from 'react'
 import { twMerge } from 'tailwind-merge'
 
