@@ -1,5 +1,11 @@
 import SignupForm from '@/components/ui/auth/SignupForm'
+import { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Sign up',
+  description: 'Sign up for an account',
+}
 
 const SignupPage = () => (
   <div className="h-screen flex flex-col justify-center items-center gap-y-8 bg-darkest">

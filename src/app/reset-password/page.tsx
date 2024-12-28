@@ -1,5 +1,11 @@
 import ResetPasswordForm from '@/components/ui/auth/ResetPasswordForm'
+import { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Reset Password',
+  description: 'Reset your account password',
+}
 
 const ResetPasswordPage = () => (
   <div className="h-screen flex flex-col justify-center items-center gap-y-8 bg-darkest">
