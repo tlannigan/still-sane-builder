@@ -1,10 +1,11 @@
+import { User } from '@supabase/supabase-js'
+import MenuButton from '../inputs/MenuButton'
 import CharmSlot from './CharmSlot'
 import Flasks from './Flasks'
 import HealthGlobe from './HealthGlobe'
 import HudButton from './HudButton'
-import MenuButton from './MenuButton'
 
-const LeftHud = () => (
+const LeftHud = ({ user }: { user?: User }) => (
   <div className="w-[26.9vw] h-[7.8vw] rounded-tr-[3.75vw] bg-background relative">
     <HealthGlobe />
 
@@ -14,7 +15,7 @@ const LeftHud = () => (
 
         <div className="grow flex flex-col justify-between">
           <div className="flex justify-center items-center gap-[2px] -mt-[0.1vw] ">
-            <MenuButton />
+            <MenuButton user={user} />
             <HudButton />
           </div>
 
