@@ -25,11 +25,10 @@ import {
 import { PaneContext } from '@/components/logic/context/InterfaceControlContext'
 import { Pane } from '@/constants/enums'
 import { User } from '@supabase/supabase-js'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 const MenuButton = ({ user }: { user?: User }) => {
   const { setLeftPane, setRightPane } = useContext(PaneContext)
-  const router = useRouter()
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -71,7 +70,7 @@ const MenuButton = ({ user }: { user?: User }) => {
             aria-labelledby={headingId}
             {...getFloatingProps()}
           >
-            <menu className="flex flex-col gap-y-2 text-lg bg-black/50 font-fontin text-white rounded p-4">
+            <menu className="flex flex-col gap-y-2 text-lg bg-black/75 font-fontin text-white rounded p-4">
               <PaneButton
                 text="Inventory (I)"
                 onClick={() => setRightPane(Pane.INVENTORY)}
@@ -105,21 +104,13 @@ const MenuButton = ({ user }: { user?: User }) => {
               </PaneButton>
 
               {user ? (
-                <PaneButton
-                  text="Account Details (A)"
-                  onClick={() => {}}
-                  setIsOpen={setIsOpen}
-                >
+                <PaneLink text="Account Details (A)" href="/account">
                   <FontAwesomeIcon icon={faCircleUser} />
-                </PaneButton>
+                </PaneLink>
               ) : (
-                <PaneButton
-                  text="Login (L)"
-                  onClick={() => router.push('/login')}
-                  setIsOpen={setIsOpen}
-                >
+                <PaneLink text="Login (L)" href="/login">
                   <FontAwesomeIcon icon={faRightToBracket} />
-                </PaneButton>
+                </PaneLink>
               )}
             </menu>
           </div>
@@ -145,11 +136,29 @@ const PaneButton = ({
       onClick()
       setIsOpen(false)
     }}
-    className="flex items-center gap-x-3 hover:text-amber-400"
+    className="flex items-center gap-x-3 hover:text-amber-400 transition-colors"
   >
     <div className="w-5 content-center">{children}</div>
     <span>{text}</span>
   </button>
+)
+
+const PaneLink = ({
+  text,
+  href,
+  children,
+}: {
+  text: string
+  href: string
+  children: ReactNode
+}) => (
+  <Link
+    href={href}
+    className="flex items-center gap-x-3 hover:text-amber-400 transition-colors"
+  >
+    <div className="w-5 content-center">{children}</div>
+    <span>{text}</span>
+  </Link>
 )
 
 export default MenuButton

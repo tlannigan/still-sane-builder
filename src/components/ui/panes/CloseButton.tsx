@@ -18,7 +18,7 @@ const CloseButton = ({
           : setRightPane(Pane.NONE)
       }}
       className={twMerge(
-        `w-9 h-9 text-white font-bold bg-red-500 hover:bg-red-600 rounded-full pb-[0.125rem] pr-[0.075rem]`,
+        `w-9 h-9 text-white font-bold bg-red-500 hover:bg-red-600 rounded-full`,
         className
       )}
       {...props}
