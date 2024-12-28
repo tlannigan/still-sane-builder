@@ -14,7 +14,10 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Still Sane',
+  title: {
+    template: '%s | Still Sane, Builder?',
+    default: 'Still Sane, Builder?',
+  },
   description: 'Share your Path of Exile 2 builds with others.',
 }
 
