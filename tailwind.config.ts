@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        fontin: ['var(--font-fontin)'],
+      },
       colors: {
         background: '#303030',
         lighter: '#606060',

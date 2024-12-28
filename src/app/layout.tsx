@@ -1,16 +1,22 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import './globals.css'
+import localFont from 'next/font/local'
 import Providers from '@/components/logic/providers/Providers'
+import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
+// FontAwesome configuration to prevent icon size flicker
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const fontin = localFont({
+  src: [
+    { path: './fonts/Fontin-Bold.ttf', weight: '700', style: 'normal' },
+    { path: './fonts/Fontin-Italic.ttf', weight: '400', style: 'italic' },
+    { path: './fonts/Fontin-Regular.ttf', weight: '400', style: 'normal' },
+    { path: './fonts/Fontin-SmallCaps.ttf', weight: '100', style: 'normal' },
+  ],
+  display: 'swap',
+  variable: '--font-fontin',
 })
 
 export const metadata: Metadata = {
@@ -29,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white overflow-hidden`}
+        className={`${fontin.variable} antialiased bg-black text-white overflow-hidden`}
       >
         <Providers>{children}</Providers>
       </body>

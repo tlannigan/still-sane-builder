@@ -12,7 +12,7 @@ const UpdatePasswordPage = async () => {
 
   return (
     <div className="h-screen flex flex-col justify-center items-center gap-y-8 bg-darkest">
-      <h1 className="text-4xl">Still Sane, Builder?</h1>
+      <h1 className="font-fontin font-thin text-4xl">Still Sane, Builder?</h1>
       <p className="text-lg">Update your account password</p>
 
       <UpdatePasswordForm />
