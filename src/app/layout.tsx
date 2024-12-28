@@ -6,6 +6,7 @@ import './globals.css'
 // FontAwesome configuration to prevent icon size flicker
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import Footer from '@/components/ui/layout/Footer'
 config.autoAddCss = false
 
 const fontin = localFont({
@@ -38,6 +39,7 @@ export default function RootLayout({
         className={`${fontin.variable} antialiased bg-black text-white overflow-hidden`}
       >
         <Providers>{children}</Providers>
+        <Footer />
       </body>
     </html>
   )
