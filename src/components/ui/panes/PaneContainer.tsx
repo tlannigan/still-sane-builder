@@ -7,6 +7,7 @@ import CharacterPane from './CharacterPane'
 import SkillsPane from './SkillsPane'
 import InventoryPane from './InventoryPane'
 import useKeyboardShortcut from '@/hooks/useKeyboardShortcut'
+import { AnimatePresence, motion } from 'motion/react'
 
 const PaneContainer = () => {
   const { leftPane, setLeftPane, rightPane, setRightPane } =
@@ -28,23 +29,25 @@ const PaneContainer = () => {
   })
 
   return (
-    <div className="flex justify-between">
-      {getPane(leftPane)}
-      {getPane(rightPane)}
+    <div className="relative">
+      <AnimatePresence>
+        {getPane(leftPane, 'left')}
+        {getPane(rightPane, 'right')}
+      </AnimatePresence>
     </div>
   )
 }
 
-function getPane(pane: Pane) {
+function getPane(pane: Pane, side: 'left' | 'right') {
   switch (pane) {
     case Pane.CHARACTER:
-      return <CharacterPane />
+      return <CharacterPane key="character" />
     case Pane.SKILLS:
-      return <SkillsPane />
+      return <SkillsPane key="skills" />
     case Pane.INVENTORY:
-      return <InventoryPane />
+      return <InventoryPane key="inventory" />
     default:
-      return <div />
+      return <motion.div key={side + '-none'} />
   }
 }
 
