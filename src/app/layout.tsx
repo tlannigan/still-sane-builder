@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Providers from '@/components/logic/providers/Providers'
+import Footer from '@/components/ui/layout/Footer'
 import './globals.css'
 
 // FontAwesome configuration to prevent icon size flicker
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import Footer from '@/components/ui/layout/Footer'
 config.autoAddCss = false
 
 const fontin = localFont({
