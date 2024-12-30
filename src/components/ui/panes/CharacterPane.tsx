@@ -3,62 +3,56 @@ import PaneLayout from './PaneLayout'
 const CharacterPane = () => {
   return (
     <PaneLayout title="Character" side="left">
-      <div className="flex flex-col gap-y-2">
+      <div className="flex flex-col gap-y-2 px-[1.25rem] desktop-1080:px-[1.875rem] desktop-1440:px-[2.5rem]">
         {/* Build Author */}
-        <div className="flex flex-col bg-darker px-10 pt-2 pb-1">
-          <h2 className="font-light text-2xl text-center mb-3">
-            CaptainLance9
-          </h2>
+        <div className="flex flex-col bg-darker pt-2 pb-1 font-thin -mx-[1.25rem] desktop-1080:-mx-[1.875rem] desktop-1440:-mx-[2.5rem] px-[1.25rem] desktop-1080:px-[1.875rem] desktop-1440:px-[2.5rem]">
+          <h2 className="text-2xl text-center mb-3">CaptainLance9</h2>
 
-          <div className="flex justify-between tracking-wider">
-            <div className="w-[18rem] flex flex-col gap-y-[1px]">
-              <div className="bg-light rounded-e-full uppercase">
-                <p className="py-[0.25rem] pl-12">Level 91 Stormweaver</p>
+          <div className="flex justify-between gap-x-4 tracking-wider text-xs desktop-1080:text-sm desktop-1440:text-base">
+            <div className="basis-0 grow flex flex-col gap-y-[1px]">
+              <div className="bg-light rounded-e-full">
+                <p className="py-[0.125rem] desktop-1080:py-[0.1875rem] desktop-1440:py-[0.25rem] pl-[1.25rem] desktop-1080:pl-[1.875rem] desktop-1440:pl-[2.5rem]">
+                  Level 91 Stormweaver
+                </p>
               </div>
               <div className="bg-light rounded-e-full">
-                <p className="py-[0.25rem] pl-12">twitch.com/captainlance9</p>
+                <p className="py-[0.125rem] desktop-1080:py-[0.1875rem] desktop-1440:py-[0.25rem] pl-[1.25rem] desktop-1080:pl-[1.875rem] desktop-1440:pl-[2.5rem]">
+                  Twitch
+                </p>
               </div>
               <div className="bg-light rounded-e-full">
-                <p className="py-[0.25rem] pl-12">Updated Dec. 21, 2024</p>
+                <p className="py-[0.125rem] desktop-1080:py-[0.1875rem] desktop-1440:py-[0.25rem] pl-[1.25rem] desktop-1080:pl-[1.875rem] desktop-1440:pl-[2.5rem]">
+                  Updated Dec. 21, 2024
+                </p>
               </div>
             </div>
 
-            <div className="bg-black w-[8rem] h-[6.5rem]" />
+            <div className="bg-black w-[4rem] desktop-1080:w-[6rem] desktop-1440:w-[8rem] h-[3.25rem] desktop-1080:h-[4.875rem] desktop-1440:h-[6.5rem]" />
 
-            <div className="w-[18rem] flex flex-col gap-y-[1px]">
-              <div className="bg-light rounded-s-full uppercase">
-                <p className="py-[0.25rem] pl-12">Something</p>
+            <div className="basis-0 grow flex flex-col gap-y-[1px]">
+              <div className="bg-light rounded-s-full">
+                <p className="py-[0.125rem] desktop-1080:py-[0.1875rem] desktop-1440:py-[0.25rem] pl-12">
+                  Something
+                </p>
               </div>
-              <div className="bg-light rounded-s-full uppercase">
-                <p className="py-[0.25rem] pl-12">Something</p>
+              <div className="bg-light rounded-s-full">
+                <p className="py-[0.125rem] desktop-1080:py-[0.1875rem] desktop-1440:py-[0.25rem] pl-12">
+                  Something
+                </p>
               </div>
-              <div className="bg-light rounded-s-full uppercase">
-                <p className="py-[0.25rem] pl-12">Something</p>
+              <div className="bg-light rounded-s-full">
+                <p className="py-[0.125rem] desktop-1080:py-[0.1875rem] desktop-1440:py-[0.25rem] pl-12">
+                  Something
+                </p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Build Summary */}
-        <div className="flex gap-2 text-sm px-10">
-          <div className="basis-1/4 bg-darker py-2 px-4">
-            <h3 className="text-lg font-light">PROS</h3>
-            <ul className="list-none">
-              <li>Good clear</li>
-              <li>Good survivability</li>
-              <li>Solid boss damage</li>
-              <li>Endgame boss viable</li>
-            </ul>
-          </div>
-          <div className="basis-1/4 bg-darker py-2 px-4">
-            <h3 className="text-lg font-light">CONS</h3>
-            <ul className="list-none">
-              <li>CI is vulnerable to freeze (freeze charm works ok)</li>
-              <li>Pricey due to popularity</li>
-            </ul>
-          </div>
-          <div className="basis-1/2 bg-darker py-2 px-4">
-            <h3 className="text-lg font-light">SUMMARY</h3>
+        <div className="flex gap-2 text-xs desktop-1080:text-sm">
+          <div className="bg-darker py-4 px-8">
+            <h3 className="text-lg font-thin mb-2">Summary</h3>
             <p>
               If you want to kill everything on your screen instantly, this is
               the build for you. Endgame-viable and tanky enough to sustain high
@@ -67,8 +61,27 @@ const CharacterPane = () => {
           </div>
         </div>
 
-        <div className="bg-darker px-12 py-8 mx-10">
-          <h3 className="font-light text-xl mb-8">BUILD ORDER</h3>
+        <div className="flex justify-between gap-2 text-xs desktop-1080:text-sm">
+          <div className="basis-1/2 py-4 px-8 bg-darker">
+            <h3 className="text-lg font-thin mb-2">Pros</h3>
+            <ul className="list-disc marker:text-lighter">
+              <li>Good clear</li>
+              <li>Good survivability</li>
+              <li>Solid boss damage</li>
+              <li>Endgame boss viable</li>
+            </ul>
+          </div>
+          <div className="basis-1/2 py-4 px-8 bg-darker">
+            <h3 className="text-lg font-thin mb-2">Cons</h3>
+            <ul className="list-disc marker:text-lighter">
+              <li>CI is vulnerable to freeze (freeze charm works ok)</li>
+              <li>Pricey due to popularity</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-darker px-12 py-8">
+          <h3 className="font-thin text-xl mb-8">Build Order</h3>
 
           {/* Section */}
           <div className="my-2">
