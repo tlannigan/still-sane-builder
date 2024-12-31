@@ -13,6 +13,7 @@ const PaneLayout = ({
   children: ReactNode
 }) => (
   <motion.div
+    transition={{ type: 'tween', duration: 0.25 }}
     initial={{ translateX: side === 'left' ? '-100%' : '100%' }}
     animate={{ translateX: '0' }}
     exit={{ translateX: side === 'left' ? '-100%' : '100%' }}
