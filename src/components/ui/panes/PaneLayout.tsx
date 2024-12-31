@@ -24,7 +24,7 @@ const PaneLayout = ({
   >
     <PaneHeader title={title} side={side} />
     <div className="grow bg-darkest px-2 overflow-y-scroll">{children}</div>
-    <div className="shrink-0 basis-[11.4vw] bg-darker mt-2 mx-2 justify-self-end" />
+    <div className="shrink-0 basis-[9.125rem] desktop-1080:basis-[13.6875rem] desktop-1440:basis-[18.25rem] bg-darker mt-2 mx-2 justify-self-end" />
   </motion.div>
 )
 

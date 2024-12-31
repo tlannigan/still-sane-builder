@@ -51,7 +51,7 @@ const CharacterPane = () => {
 
         {/* Build Summary */}
         <div className="flex gap-2 text-xs desktop-1080:text-sm">
-          <div className="bg-darker py-4 px-8">
+          <div className="bg-darker p-[1.25rem] desktop-1080:p-[1.875rem] desktop-1440:p-[2.5rem]">
             <h3 className="text-lg font-thin mb-2">Summary</h3>
             <p>
               If you want to kill everything on your screen instantly, this is
@@ -62,7 +62,7 @@ const CharacterPane = () => {
         </div>
 
         <div className="flex justify-between gap-2 text-xs desktop-1080:text-sm">
-          <div className="basis-1/2 py-4 px-8 bg-darker">
+          <div className="basis-1/2 p-[1.25rem] desktop-1080:p-[1.875rem] desktop-1440:p-[2.5rem] bg-darker">
             <h3 className="text-lg font-thin mb-2">Pros</h3>
             <ul className="list-disc marker:text-lighter">
               <li>Good clear</li>
@@ -71,7 +71,7 @@ const CharacterPane = () => {
               <li>Endgame boss viable</li>
             </ul>
           </div>
-          <div className="basis-1/2 py-4 px-8 bg-darker">
+          <div className="basis-1/2 p-[1.25rem] desktop-1080:p-[1.875rem] desktop-1440:p-[2.5rem] bg-darker">
             <h3 className="text-lg font-thin mb-2">Cons</h3>
             <ul className="list-disc marker:text-lighter">
               <li>CI is vulnerable to freeze (freeze charm works ok)</li>
@@ -80,7 +80,7 @@ const CharacterPane = () => {
           </div>
         </div>
 
-        <div className="bg-darker px-12 py-8">
+        <div className="bg-darker p-[1.25rem] desktop-1080:p-[1.875rem] desktop-1440:p-[2.5rem]">
           <h3 className="font-thin text-xl mb-8">Build Order</h3>
 
           {/* Section */}
