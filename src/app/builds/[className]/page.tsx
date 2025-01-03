@@ -2,7 +2,13 @@ import BuildListings from '@/components/ui/BuildListings'
 import ClassLink from '@/components/ui/inputs/ClassLink'
 import Sidebar from '@/components/ui/Sidebar'
 
-export default async function HomePage() {
+export default async function BuildListingsPage({
+  params,
+}: {
+  params: Promise<{ className: string }>
+}) {
+  const { className } = await params
+
   return (
     <div className="flex font-fontin">
       <Sidebar>
@@ -15,7 +21,7 @@ export default async function HomePage() {
         <ClassLink name="Witch" />
       </Sidebar>
 
-      <BuildListings title="Featured" />
+      <BuildListings title={className} />
     </div>
   )
 }

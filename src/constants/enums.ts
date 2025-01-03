@@ -4,3 +4,12 @@ export enum Pane {
   SKILLS,
   NONE,
 }
+
+export enum Class {
+  MERCENARY,
+  MONK,
+  RANGER,
+  SORCERESS,
+  WARRIOR,
+  WITCH,
+}

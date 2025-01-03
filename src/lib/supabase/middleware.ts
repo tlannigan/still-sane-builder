@@ -33,7 +33,14 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  const publicRoutes = ['/auth', '/login', '/signup', '/reset-password']
+  const publicRoutes = [
+    '/auth',
+    '/login',
+    '/signup',
+    '/reset-password',
+    '/builds',
+    '/build',
+  ]
 
   if (
     !user &&
