@@ -59,7 +59,21 @@ const MenuButton = ({ user }: { user?: User }) => {
         ref={refs.setReference}
         {...getReferenceProps()}
       >
-        <FontAwesomeIcon icon={faBars} size="xl" />
+        <FontAwesomeIcon
+          icon={faBars}
+          size="xl"
+          className="!hidden desktop-1440:!inline-block"
+        />
+        <FontAwesomeIcon
+          icon={faBars}
+          size="lg"
+          className="max-desktop-1080:!hidden desktop-1440:!hidden"
+        />
+        <FontAwesomeIcon
+          icon={faBars}
+          size="xs"
+          className="desktop-1080:!hidden"
+        />
       </button>
       {isOpen && (
         <FloatingFocusManager context={context} modal={false}>

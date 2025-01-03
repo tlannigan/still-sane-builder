@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PaneLayout from './PaneLayout'
+import { faCopy } from '@fortawesome/free-regular-svg-icons'
 
 const CharacterPane = () => {
   return (
@@ -6,7 +8,7 @@ const CharacterPane = () => {
       <div className="flex flex-col gap-y-2 px-[1.25rem] desktop-1080:px-[1.875rem] desktop-1440:px-[2.5rem]">
         {/* Build Author */}
         <div className="flex flex-col bg-darker pt-2 pb-1 font-thin -mx-[1.25rem] desktop-1080:-mx-[1.875rem] desktop-1440:-mx-[2.5rem] px-[1.25rem] desktop-1080:px-[1.875rem] desktop-1440:px-[2.5rem]">
-          <h2 className="text-2xl text-center mb-3">CaptainLance9</h2>
+          <h2 className="text-2xl text-center mb-3">Author Name</h2>
 
           <div className="flex justify-between gap-x-4 tracking-wider text-xs desktop-1080:text-sm desktop-1440:text-base">
             <div className="basis-0 grow flex flex-col gap-y-[1px]">
@@ -17,7 +19,8 @@ const CharacterPane = () => {
               </div>
               <div className="bg-light rounded-e-full">
                 <p className="py-[0.125rem] desktop-1080:py-[0.1875rem] desktop-1440:py-[0.25rem] pl-[1.25rem] desktop-1080:pl-[1.875rem] desktop-1440:pl-[2.5rem]">
-                  Twitch
+                  <span className="mr-4">Path of Building</span>
+                  <FontAwesomeIcon icon={faCopy} />
                 </p>
               </div>
               <div className="bg-light rounded-e-full">
@@ -32,17 +35,17 @@ const CharacterPane = () => {
             <div className="basis-0 grow flex flex-col gap-y-[1px]">
               <div className="bg-light rounded-s-full">
                 <p className="py-[0.125rem] desktop-1080:py-[0.1875rem] desktop-1440:py-[0.25rem] pl-12">
-                  Something
+                  Video Showcase
                 </p>
               </div>
               <div className="bg-light rounded-s-full">
                 <p className="py-[0.125rem] desktop-1080:py-[0.1875rem] desktop-1440:py-[0.25rem] pl-12">
-                  Something
+                  Twitch Channel
                 </p>
               </div>
               <div className="bg-light rounded-s-full">
                 <p className="py-[0.125rem] desktop-1080:py-[0.1875rem] desktop-1440:py-[0.25rem] pl-12">
-                  Something
+                  Other Social
                 </p>
               </div>
             </div>
