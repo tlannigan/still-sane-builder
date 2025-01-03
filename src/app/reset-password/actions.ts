@@ -1,6 +1,7 @@
 'use server'
 
 import { createClient } from '@/lib/supabase/server'
+import { revalidatePath } from 'next/cache'
 import { z } from 'zod'
 
 export type ResetPasswordRequest = {
@@ -37,6 +38,8 @@ export async function resetPassword(formData: FormData, captchaToken?: string) {
     if (error) {
       return error.message ?? 'Something went wrong.'
     }
+
+    revalidatePath('/', 'layout')
   } else {
     const zodIssues = parsedRequest.error.issues
     return zodIssues ?? 'Something went wrong.'

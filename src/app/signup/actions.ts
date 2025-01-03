@@ -2,7 +2,6 @@
 
 import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
-import { redirect } from 'next/navigation'
 import { z, ZodIssue } from 'zod'
 
 export type SignupRequest = {
@@ -46,11 +45,10 @@ export async function signup(
     if (error) {
       return error.message ?? 'Something went wrong.'
     }
+
+    revalidatePath('/', 'layout')
   } else {
     const zodIssues = parsedRequest.error.issues
     return zodIssues ?? 'Something went wrong.'
   }
-
-  revalidatePath('/', 'layout')
-  redirect('/')
 }

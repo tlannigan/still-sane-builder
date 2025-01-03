@@ -11,9 +11,17 @@ const SignupForm = () => {
   const [password, setPassword] = useState('')
   const [captchaToken, setCaptchaToken] = useState<string>()
 
+  const [signupEmailSent, setSignupEmailSent] = useState(false)
+
   const [error, submitAction, isPending] = useActionState(
     async (prevState: unknown, formData: FormData) => {
-      return await signup(formData, captchaToken)
+      const signupError = await signup(formData, captchaToken)
+
+      if (signupError) {
+        return signupError
+      } else {
+        setSignupEmailSent(true)
+      }
     },
     undefined
   )
@@ -64,12 +72,18 @@ const SignupForm = () => {
 
       {typeof error === 'string' && <p className="text-red-400">{error}</p>}
 
-      <LoadingButton
-        text="Sign up"
-        loadingText="Signing up"
-        loading={isPending}
-        disabled={!captchaToken || isPending}
-      />
+      {signupEmailSent ? (
+        <p className="w-full h-12 text-center text-xl text-green-400">
+          Check your email for further instructions.
+        </p>
+      ) : (
+        <LoadingButton
+          text="Sign up"
+          loadingText="Signing up"
+          loading={isPending}
+          disabled={!captchaToken || isPending}
+        />
+      )}
     </form>
   )
 }
