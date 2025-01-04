@@ -13,6 +13,7 @@ export default {
       },
       colors: {
         background: '#303030',
+        lightest: '#707070',
         lighter: '#606060',
         light: '#2F2F2F',
         dark: '#242424',
