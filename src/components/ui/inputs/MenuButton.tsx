@@ -130,7 +130,7 @@ const MenuButton = ({ user }: { user?: User }) => {
                 <FontAwesomeIcon icon={faUser} />
               </PaneButton>
 
-              {user ? (
+              {!user ? (
                 <>
                   <PaneLink text="Account Details (A)" href="/account">
                     <FontAwesomeIcon icon={faCircleUser} />
@@ -142,6 +142,7 @@ const MenuButton = ({ user }: { user?: User }) => {
                     <div className="w-5 content-center">
                       <FontAwesomeIcon icon={faSkullCrossbones} />
                     </div>
+                    <span>Logout</span>
                   </button>
                 </>
               ) : (

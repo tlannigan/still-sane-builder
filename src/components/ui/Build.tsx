@@ -7,7 +7,7 @@ const Build = () => (
 
       <div className="h-[4.5rem] flex flex-col justify-between">
         <div>
-          <h3 className="font-thin group-hover:text-amber-400">
+          <h3 className="font-thin group-hover:text-amber-400 transition-colors">
             Archmage Spark
           </h3>
           <p className="text-xs">By CaptainLance9</p>
