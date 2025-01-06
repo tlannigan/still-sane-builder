@@ -8,7 +8,7 @@ export default async function loginWithOAuth() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'discord',
     options: {
-      redirectTo: 'https://stillsane.build/auth/callback',
+      redirectTo: 'https://stillsane.build',
     },
   })
 
@@ -18,5 +18,7 @@ export default async function loginWithOAuth() {
 
   if (data.url) {
     redirect(data.url)
+  } else {
+    redirect('https://stillsane.build')
   }
 }
