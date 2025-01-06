@@ -41,5 +41,5 @@ yarn-error.log*
 next-env.d.ts
 
 # poe-dat-viewer
-/src/game-data/.cache*
-/src/game-data/files
+/src/poe-dat-viewer/.cache
+/src/poe-dat-viewer/files
