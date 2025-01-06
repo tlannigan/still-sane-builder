@@ -3,7 +3,6 @@ import SkillSocket from './SkillSocket'
 import SupportSocket from './SupportSocket'
 import upArrow from '@/assets/images/up_arrow.svg'
 import Image from 'next/image'
-import { AnimatePresence, motion } from 'motion/react'
 
 const Skill = ({ name }: { name: string }) => {
   const [open, setOpen] = useState(true)
@@ -42,24 +41,16 @@ const Skill = ({ name }: { name: string }) => {
         </div>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            className="flex justify-evenly items-center pr-2 desktop-1080:pr-3 desktop-1440:pr-4"
-            transition={{ type: 'tween', duration: 0.25 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 100 }}
-            exit={{ opacity: 0 }}
-          >
-            <SkillSocket gem="SparkSkillGem" />
-            <SupportSocket gem="ForkSupportGem" />
-            <SupportSocket gem="LightningExposureSupportGem" />
-            <SupportSocket gem="LightningPenetrationSupportGem" />
-            <SupportSocket gem="PierceSupportGem" />
-            <SupportSocket gem="StripAwaySupportGem" />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {open && (
+        <div className="flex justify-evenly items-center pr-2 desktop-1080:pr-3 desktop-1440:pr-4">
+          <SkillSocket gem="SparkSkillGem" />
+          <SupportSocket gem="ForkSupportGem" />
+          <SupportSocket gem="LightningExposureSupportGem" />
+          <SupportSocket gem="LightningPenetrationSupportGem" />
+          <SupportSocket gem="PierceSupportGem" />
+          <SupportSocket gem="StripAwaySupportGem" />
+        </div>
+      )}
     </div>
   )
 }
