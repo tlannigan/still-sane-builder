@@ -56,7 +56,7 @@ const LoginForm = () => {
 
         <Link
           href="/reset-password"
-          className="block w-min self-end text-nowrap"
+          className="block w-min self-end text-nowrap hover:text-amber-400 transition-colors"
         >
           Forgot password
         </Link>
