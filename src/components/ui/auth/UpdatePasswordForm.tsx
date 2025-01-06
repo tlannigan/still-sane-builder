@@ -1,6 +1,6 @@
 'use client'
 
-import { updatePassword } from '@/app/update-password/actions'
+import { updatePassword } from '@/actions/updatePassword'
 import { getFormFieldErrors } from '@/lib/validation'
 import { useActionState, useState } from 'react'
 import LoadingButton from '../inputs/LoadingButton'

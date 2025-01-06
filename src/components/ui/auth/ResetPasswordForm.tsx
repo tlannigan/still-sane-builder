@@ -1,6 +1,6 @@
 'use client'
 
-import { resetPassword } from '@/app/reset-password/actions'
+import { resetPassword } from '@/actions/resetPassword'
 import { getFormFieldErrors } from '@/lib/validation'
 import { useActionState, useState } from 'react'
 import CustomTurnstile from './CustomTurnstile'

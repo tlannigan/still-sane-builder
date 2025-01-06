@@ -1,7 +1,7 @@
 'use client'
 
 import { useActionState, useState } from 'react'
-import { signup } from '@/app/signup/actions'
+import { signup } from '@/actions/signup'
 import { getFormFieldErrors } from '@/lib/validation'
 import CustomTurnstile from './CustomTurnstile'
 import LoadingButton from '../inputs/LoadingButton'

@@ -20,15 +20,19 @@ import {
   faBars,
   faPlus,
   faRightToBracket,
+  faSkullCrossbones,
   faUser,
 } from '@fortawesome/free-solid-svg-icons'
 import { PaneContext } from '@/components/logic/context/InterfaceControlContext'
 import { Pane } from '@/constants/enums'
 import { User } from '@supabase/supabase-js'
 import Link from 'next/link'
+import { createClient } from '@/lib/supabase/client'
+import { useRouter } from 'next/navigation'
 
 const MenuButton = ({ user }: { user?: User }) => {
   const { setLeftPane, setRightPane } = useContext(PaneContext)
+  const router = useRouter()
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -51,6 +55,15 @@ const MenuButton = ({ user }: { user?: User }) => {
   ])
 
   const headingId = useId()
+
+  const handleSignout = async () => {
+    const supabase = createClient()
+    const { error } = await supabase.auth.signOut()
+
+    if (!error) {
+      router.push('/')
+    }
+  }
 
   return (
     <>
@@ -118,9 +131,19 @@ const MenuButton = ({ user }: { user?: User }) => {
               </PaneButton>
 
               {user ? (
-                <PaneLink text="Account Details (A)" href="/account">
-                  <FontAwesomeIcon icon={faCircleUser} />
-                </PaneLink>
+                <>
+                  <PaneLink text="Account Details (A)" href="/account">
+                    <FontAwesomeIcon icon={faCircleUser} />
+                  </PaneLink>
+                  <button
+                    onClick={handleSignout}
+                    className="flex items-center gap-x-3 hover:text-amber-400 transition-colors"
+                  >
+                    <div className="w-5 content-center">
+                      <FontAwesomeIcon icon={faSkullCrossbones} />
+                    </div>
+                  </button>
+                </>
               ) : (
                 <PaneLink text="Login (L)" href="/login">
                   <FontAwesomeIcon icon={faRightToBracket} />

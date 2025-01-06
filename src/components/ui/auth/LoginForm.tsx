@@ -1,6 +1,6 @@
 'use client'
 
-import { login } from '@/app/login/actions'
+import { login } from '@/actions/login'
 import { getFormFieldErrors } from '@/lib/validation'
 import Link from 'next/link'
 import { useActionState, useState } from 'react'
